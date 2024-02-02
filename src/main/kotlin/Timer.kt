@@ -5,7 +5,7 @@ var timeLeft by remember { mutableStateOf(20) }
 var timeStopped by remember { mutableStateOf(true) }
 
 @Composable
-fun basicCountdownTimer() {
+fun basicCountdownTimer(viewModel: MainViewModel) {
     LaunchedEffect(key1 = timeStopped) {
         while (!timeStopped && timeLeft > 0) {
             timeLeft--

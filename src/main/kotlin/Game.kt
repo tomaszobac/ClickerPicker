@@ -15,27 +15,8 @@ import androidx.compose.ui.unit.sp
 import kotlin.random.Random
 import kotlin.system.exitProcess
 
-var count by remember { mutableStateOf(20) }
-var miss by remember { mutableStateOf(0) }
-var offsetX by remember { mutableStateOf(Random.nextInt(0, 400).dp) }
-var offsetY by remember { mutableStateOf(Random.nextInt(0, 400).dp) }
-var showGame by remember { mutableStateOf(true) }
-
-fun randomizePosition() {
-    offsetX = Random.nextInt(0, 400).dp
-    offsetY = Random.nextInt(0, 400).dp
-}
-
-fun restart() {
-    count = 20
-    miss = 0
-    randomizePosition()
-    timeLeft = 20
-    showGame = true
-}
-
 @Composable
-fun run() {
+fun run(viewModel: MainViewModel) {
     if (showGame) {
         Box(modifier = Modifier
             .width(800.dp)

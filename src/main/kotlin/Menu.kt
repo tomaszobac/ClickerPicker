@@ -15,28 +15,26 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlin.system.exitProcess
 
-class Menu {
-    private var showMenu by remember { mutableStateOf(true) }
 
-    @Composable
-    fun showMenu() {
-        if (showMenu) {
-            MaterialTheme {
-                Box(modifier = Modifier.width(800.dp).height(800.dp)) {
-                    Column(modifier = Modifier.align(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text("CLICKER", fontSize = 50.sp, fontWeight = FontWeight.ExtraBold)
-                        Text("PICKER", fontSize = 50.sp, fontWeight = FontWeight.ExtraBold)
-                        TabRowDefaults.Divider(modifier = Modifier.height(20.dp), color = Color.Transparent)
-                        Button(onClick = { showMenu = false }) {
-                            Text("Start")
-                        }
-                        Button(onClick = { exitProcess(0) }) {
-                            Text("Exit")
-                        }
+
+@Composable
+fun showMenu(viewModel: MainViewModel) {
+    if (viewModel.showMenu.value) {
+        MaterialTheme {
+            Box(modifier = Modifier.width(800.dp).height(800.dp)) {
+                Column(modifier = Modifier.align(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text("CLICKER", fontSize = 50.sp, fontWeight = FontWeight.ExtraBold)
+                    Text("PICKER", fontSize = 50.sp, fontWeight = FontWeight.ExtraBold)
+                    TabRowDefaults.Divider(modifier = Modifier.height(20.dp), color = Color.Transparent)
+                    Button(onClick = { showMenu = false }) {
+                        Text("Start")
+                    }
+                    Button(onClick = { exitProcess(0) }) {
+                        Text("Exit")
                     }
                 }
             }
         }
-        if (!showMenu) run()
     }
+    if (!showMenu) run()
 }

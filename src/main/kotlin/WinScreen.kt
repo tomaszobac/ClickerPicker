@@ -17,14 +17,8 @@ import kotlinx.coroutines.delay
 import kotlin.random.Random
 import kotlin.system.exitProcess
 
-
-
-private var showWinScreen by remember { mutableStateOf(false) }
-
-fun showWin() = !showWinScreen
-
 @Composable
-fun winScreen() {
+fun winScreen(viewModel: MainViewModel) {
     if (showWinScreen) {
         Box(modifier = Modifier.width(800.dp).height(800.dp)) {
             Column(modifier = Modifier.align(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally) {

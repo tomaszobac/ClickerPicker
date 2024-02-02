@@ -4,6 +4,7 @@ import androidx.compose.ui.window.application
 
 fun main() = application {
     Window(onCloseRequest = ::exitApplication, resizable = false) {
-        MaterialTheme{ Menu().showMenu() }
+        val viewModel = MainViewModel()
+        MaterialTheme{ showMenu(viewModel) }
     }
 }
