@@ -79,7 +79,7 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "app.clickerpicker"
+            packageName = "clickerpicker"
             packageVersion = "1.0.0"
         }
     }
