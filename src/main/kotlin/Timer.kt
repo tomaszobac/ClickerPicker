@@ -12,6 +12,7 @@ fun basicCountdownTimer(viewModel: MainViewModel) {
         if (viewModel.timeLeft.value <= 0) {
             viewModel.timeStopped.value = true
             viewModel.showGame.value = false
+            viewModel.showWinScreen.value = true
         }
     }
 }
