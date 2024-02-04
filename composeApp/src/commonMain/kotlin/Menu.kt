@@ -16,7 +16,6 @@ import androidx.compose.ui.unit.sp
 import kotlin.system.exitProcess
 
 
-
 @Composable
 fun showMenu(viewModel: MainViewModel) {
     if (viewModel.showMenu.value) {
