@@ -6,7 +6,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.TabRowDefaults
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -26,7 +26,7 @@ fun showMenu(viewModel: MainViewModel) {
                     Text("CLICKER", fontSize = 50.sp, fontWeight = FontWeight.ExtraBold)
                     Text("PICKER", fontSize = 50.sp, fontWeight = FontWeight.ExtraBold)
                     TabRowDefaults.Divider(modifier = Modifier.height(20.dp), color = Color.Transparent)
-                    Button(onClick = { showMenu = false }) {
+                    Button(onClick = { viewModel.showMenu.value = false }) {
                         Text("Start")
                     }
                     Button(onClick = { exitProcess(0) }) {
@@ -36,5 +36,5 @@ fun showMenu(viewModel: MainViewModel) {
             }
         }
     }
-    if (!showMenu) run()
+    if (!viewModel.showMenu.value) run(viewModel)
 }

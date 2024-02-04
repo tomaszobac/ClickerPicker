@@ -1,7 +1,4 @@
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.unit.dp
 import kotlin.random.Random
 
@@ -30,6 +27,4 @@ class MainViewModel {
         showWinScreen.value = false
         timeStopped.value = true
     }
-
-    fun showWin() = !showWinScreen.value
 }
