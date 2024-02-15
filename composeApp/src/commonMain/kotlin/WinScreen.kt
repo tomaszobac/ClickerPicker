@@ -13,14 +13,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlin.system.exitProcess
 
 @Composable
 fun winScreen(viewModel: MainViewModel) {
+    val score = viewModel.timeLeft.value - viewModel.miss.value
+    if (viewModel.highScore.value < score) {
+        viewModel.highScore.value = score
+        viewModel.saveScore(SaveData(score))
+    }
+
     if (viewModel.showWinScreen.value) {
         Box(modifier = Modifier.width(800.dp).height(800.dp)) {
             Column(modifier = Modifier.align(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("SCORE: ${viewModel.timeLeft.value - viewModel.miss.value}", fontSize = 30.sp, fontWeight = FontWeight.ExtraBold)
+                Text("SCORE: $score", fontSize = 30.sp, fontWeight = FontWeight.ExtraBold)
+                Row {
+                    Text("High-score: ${viewModel.highScore.value}")
+                }
                 Row {
                     Text("Time Left: ${viewModel.timeLeft.value}", color = Color.Green)
                 }

@@ -12,11 +12,16 @@ androidx-material = "1.11.0"
 androidx-test-junit = "1.1.5"
 compose = "1.6.0"
 compose-plugin = "1.5.12"
+json5k = "0.3.0"
 junit = "4.13.2"
 kotlin = "1.9.22"
 kstore = "0.7.1"
+serialization = "1.6.2"
+coroutines-core = "1.8.0-RC2"
+coroutines-android = "1.8.0-RC2"
 
 [libraries]
+json5k = { module = "io.github.xn32:json5k", version.ref = "json5k" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -32,6 +37,10 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 kstore = { module = "io.github.xxfast:kstore", version.ref = "kstore" }
 kstore-file = { module = "io.github.xxfast:kstore-file", version.ref = "kstore" }
 kstore-storage = { module = "io.github.xxfast:kstore-storage", version.ref = "kstore" }
+serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines-core" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines-android" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

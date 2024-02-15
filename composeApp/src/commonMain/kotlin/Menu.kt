@@ -25,6 +25,8 @@ fun showMenu(viewModel: MainViewModel) {
                     Text("CLICKER", fontSize = 50.sp, fontWeight = FontWeight.ExtraBold)
                     Text("PICKER", fontSize = 50.sp, fontWeight = FontWeight.ExtraBold)
                     TabRowDefaults.Divider(modifier = Modifier.height(20.dp), color = Color.Transparent)
+                    Text("High-score: ${viewModel.highScore.value}")
+                    TabRowDefaults.Divider(modifier = Modifier.height(20.dp), color = Color.Transparent)
                     Button(onClick = { viewModel.showMenu.value = false }) {
                         Text("Start")
                     }
