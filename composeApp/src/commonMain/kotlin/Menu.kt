@@ -1,5 +1,7 @@
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Button
@@ -20,8 +22,10 @@ import kotlin.system.exitProcess
 fun showMenu(viewModel: MainViewModel) {
     if (viewModel.showMenu.value) {
         MaterialTheme {
-            Box(modifier = Modifier.width(800.dp).height(800.dp)) {
-                Column(modifier = Modifier.align(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally) {
+            Box(modifier = Modifier.fillMaxSize()) {
+                Column(modifier = Modifier.align(Alignment.Center),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center) {
                     Text("CLICKER", fontSize = 50.sp, fontWeight = FontWeight.ExtraBold)
                     Text("PICKER", fontSize = 50.sp, fontWeight = FontWeight.ExtraBold)
                     TabRowDefaults.Divider(modifier = Modifier.height(20.dp), color = Color.Transparent)

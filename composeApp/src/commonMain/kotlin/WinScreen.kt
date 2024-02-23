@@ -1,6 +1,7 @@
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Button
@@ -26,7 +27,7 @@ fun winScreen(viewModel: MainViewModel) {
     }
 
     if (viewModel.showWinScreen.value) {
-        Box(modifier = Modifier.width(800.dp).height(800.dp)) {
+        Box(modifier = Modifier.fillMaxSize()) {
             Column(modifier = Modifier.align(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally) {
                 Text("SCORE: $score", fontSize = 30.sp, fontWeight = FontWeight.ExtraBold)
                 Row {

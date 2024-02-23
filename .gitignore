@@ -20,3 +20,4 @@ platform-tools
 build-tools
 build
 licenses
+*.json
